@@ -1,0 +1,17 @@
+#!/bin/bash
+
+echo "Sisesta ainepunktide arv:"
+read ainepunktid
+
+echo "Sisesta nädalate arv:"
+read nadalad
+
+# Arvutame üldise ajakulu
+ajakulu=$(($ainepunktid * 26))
+
+# Arvutame ühe nädala eeldatava ajakulu (ümardades alati ülespoole)
+nadalane_ajakulu=$(awk -v ajakulu="$ajakulu" -v nadalad="$nadalad" 'BEGIN { printf "%.0f", ajakulu / nadalad }')
+
+echo "Ühe nädala eeldatav ajakulu on $nadalane_ajakulu tundi."
+
+
