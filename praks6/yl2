@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Küsime kasutajalt suvalist täisarvu
+echo -n "Sisesta suvaline täisarv: "
+read arv
+
+# Salvestame arvu absoluutväärtuse, et arvutada numbrite summat
+abs_arv=${arv#-}
+summa=0
+
+# Arvutame numbrite summat
+while [ $abs_arv -gt 0 ]; do
+    digit=$((abs_arv % 10))
+    summa=$((summa + digit))
+    abs_arv=$((abs_arv / 10))
+done
+
+# Kuvame vastava teksti koos leitud numbrite summaga
+echo "Arvu $arv numbrite summa on $summa"
+
