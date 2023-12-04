@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Skripti eesmärk
+# See skript arvutab vajalike busside arvu vastavalt reisijate arvule ja kohtade arvule bussis,
+# suurendades busside arvu ühe võrra, kui tekivad reisijad, kes ei mahu täisbusside sisse.
+
+echo "Sisesta reisijate arv:"
+read reisijad
+
+echo "Sisesta kohtade arv bussis:"
+read kohad
+
+# Arvutame täielikult täidetud busside arvu ja maha jäänud inimeste arvu
+taisbussid=$(($reisijad / $kohad))
+mahajaanud=$(($reisijad % $kohad))
+
+# Kontrollime, kas on tekkinud inimesed, kes ei mahu täisbusside sisse
+if [ $mahajaanud -gt 0 ]; then
+    taisbussid=$(($taisbussid + 1))
+fi
+
+echo "Kokku on vaja $taisbussid bussi"
+
