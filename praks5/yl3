@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Küsime kasutajalt tunniarvu
+echo -n "Sisesta tunni number (0-23): "
+read tund
+
+# Kontrollime tundi ja vastavalt sellele tervitame
+if [ "$tund" -ge 6 ] && [ "$tund" -lt 12 ]; then
+    echo "Tere hommikust!"
+elif [ "$tund" -ge 12 ] && [ "$tund" -lt 18 ]; then
+    echo "Tere päevast!"
+elif [ "$tund" -ge 18 ] && [ "$tund" -lt 22 ]; then
+    echo "Tere õhtust!"
+elif [ "$tund" -ge 22 ] || [ "$tund" -lt 6 ]; then
+    echo "Head ööd!"
+else
+    echo "Vigane sisend! Sisesta tundide arv vahemikus 0 kuni 23."
+fi
+
