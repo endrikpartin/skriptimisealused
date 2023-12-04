@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Skripti eesmärk:
+# See skript kontrollib käsurealt sisestatud arvu paarsust ja väljastab vastava sõnumi.
+
+# Kontrollime, kas skript käivitati koos ühe täisarvuga
+if [ "$#" -ne 1 ]; then
+    echo "Käivita see skript koos arvuga, mille paarsust soovid kontrollida. Näiteks: $0 <arv>"
+else
+    arv="$1"
+
+    # Kontrollime arvu paarsust
+    if [ $((arv % 2)) -eq 0 ]; then
+        echo "Antud arv $arv on paarisarv."
+    else
+        echo "Antud arv $arv on paaritu arv."
+    fi
+fi
+
