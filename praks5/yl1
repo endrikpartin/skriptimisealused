@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Küsime kasutajalt vanust
+echo -n "Sisesta oma vanus: "
+read arv
+
+# Kontrollime vanuse vahemikku ja väljastame vastava sõnumi
+# Kasutame korrektset süntaksit ja kohandame võrdlusoperaatoreid
+# Lisame IF-lausele korrektse vormistuse ja -gt (greater than) operaatori
+if [ "$arv" -ge 0 ] && [ "$arv" -le 11 ]; then
+    echo "Oled laps!"
+# Kasutame -ge (greater than or equal to) ja -le (less than or equal to) operaatoreid
+elif [ "$arv" -ge 12 ] && [ "$arv" -le 17 ]; then
+    echo "Oled nooruk!"
+elif [ "$arv" -ge 18 ] && [ "$arv" -le 62 ]; then
+    echo "Oled täiskasvanu!"
+# Kasutame ainult -gt (greater than) operaatorit
+elif [ "$arv" -gt 62 ]; then
+    echo "Oled seenior!"
+else
+    echo "Vigane sisend!"
+fi
+
