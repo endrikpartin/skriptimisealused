@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#Kuuppäev ja kellaaeg
+current_date=$(date "+%A, %B %d, %Y")
+current_time=$(date "+%T")
+
+#Ajavöönd
+timezone=$(date "+%Z")
+
+#Näitame kasutajale kuupäeva, kellaaeg ja ajavööndit
+echo "Täna on $current_date."
+echo "Kell on praegu $current_time."
+echo "Teie ajavöönd on $timezone."
+cal #kuvab kalendri
