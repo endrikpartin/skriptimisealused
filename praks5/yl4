@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Loeme süsteemi hetkeaja tundi
+tund=$(date +%H)
+
+# Küsime kasutajalt nime
+echo -n "Sisesta oma nimi: "
+read nimi
+
+# Kontrollime tundi ja tervitame kasutajat vastavalt kellaajale ja nimele
+if [ "$tund" -ge 6 ] && [ "$tund" -lt 12 ]; then
+    echo "Tere hommikust, $nimi!"
+elif [ "$tund" -ge 12 ] && [ "$tund" -lt 18 ]; then
+    echo "Tere päevast, $nimi!"
+elif [ "$tund" -ge 18 ] && [ "$tund" -lt 22 ]; then
+    echo "Tere õhtust, $nimi!"
+elif [ "$tund" -ge 22 ] || [ "$tund" -lt 6 ]; then
+    echo "Head ööd, $nimi!"
+else
+    echo "Vigane sisend! Midagi läks valesti."
+fi
+
