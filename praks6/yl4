@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Funktsioon kontrollib, kas antud arv on algarv või mitte
+function onAlgarv() {
+    local num=$1
+    local jagaja=2
+
+    # Kontrollime, kas arv on väiksem või võrdne jagajaga
+    while [ $jagaja -le $(($num / $jagaja)) ]; do
+        if [ $(($num % $jagaja)) -eq 0 ]; then
+            echo "Ei ole algarv"
+            return
+        fi
+        jagaja=$((jagaja + 1))
+    done
+
+    echo "On algarv"
+}
+
+# Küsime kasutajalt suvalist arvu
+echo -n "Sisesta suvaline arv: "
+read arv
+
+# Kontrollime kas antud arv on algarv või mitte
+onAlgarv $arv
+
