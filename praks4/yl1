@@ -1,0 +1,12 @@
+#!/bin/bash
+
+echo "Sisesta üks täisarv:"
+read arv
+
+# Kontrollime, kas arv on paaris või mitte
+if [ $((arv % 2)) -eq 0 ]; then
+    echo "$arv on paaris arv."
+else
+    echo "$arv ei ole paaris arv."
+fi
+
