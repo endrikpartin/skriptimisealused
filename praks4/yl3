@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ "$1" -eq 1 ] ; then
+    echo "You Picked Unix (Sun Os)"
+elif [ "$1" -eq 2 ] ; then
+    echo "You Picked Linux (Red Hat)"
+else
+    echo "What you don't like Unix/Linux OS."
+fi
+#Sisestades ./yl3 1 saan koheselt Unix vastuseks ning ./yl3 2 puhul saan Linux.
