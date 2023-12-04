@@ -1,0 +1,16 @@
+#!/bin/bash
+
+count=0
+sum=0
+number=1
+
+while [ $count -lt 10 ]; do
+    if [ $((number % 2)) -eq 0 ]; then
+        sum=$((sum + number))
+        count=$((count + 1))
+    fi
+    number=$((number + 1))
+done
+
+echo "Arvude vahemikus 1 kuni 10 (kaasaarvutatud) paarisarvude summa on: $sum"
+
